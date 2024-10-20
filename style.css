@@ -1,0 +1,204 @@
+/* font-family: "Ubuntu Mono", monospace; */
+/* font-family: "Roboto Mono", monospace; */
+
+/* Normalizacion de la pagina */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu Mono", monospace;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+body{
+    background-color: black; /*TO DO: Borrar cuando tengamos el fondo final*/
+}
+
+
+/* -------------------- Estilos del header -------------------- */
+header{
+    position: fixed;
+    display: flex;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 3%;
+    background-color: rgba(0, 0, 0, 10%);
+}
+
+.logo-header{
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.navlist-header{
+    display: flex;
+}
+
+.navlist-header a{
+    margin-left: 45px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;
+}
+
+.navlist-header a:hover{
+    border-bottom: 2px solid white;
+}
+
+
+#menu-icon-header,
+#menu-header-toggle,
+#menu-header-label-toggle{
+    display: none; /*Solo se va a ver cuando la pagina este colapsada*/
+}
+
+#menu-icon-header{
+    color: white;
+    font-size: 35px;
+    /* Estara sobre el header */
+    z-index: 101; 
+    /* Para que aparezca la manito con el mouse */
+    cursor: pointer;
+
+}
+
+
+/* -------------------- Estilos del hero -------------------- */
+.hero{
+
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    
+    background: linear-gradient(245.59deg, #274d74 0%, #1d3a58 25%, #131313 75%);
+    position: relative; /* Para que sea relativo al contenedor (nos permite usar top, bottom, left y right) */
+    display: grid; /* Para que el hero se pueda dividir en dos columnas */
+    grid-template-columns: 1fr 1fr; /* las 2 columnas */
+    align-items: center; /* para alinear verticalmente el hero */
+    gap: 2rem; /* haya espacio de 2 rem entre las dos columnas */
+}
+
+section{
+    padding: 0 8%;
+}
+
+.hero-text h5{
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+.hero-text h4{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+
+.hero-img img{
+    margin: 10% 0 0 10%;
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border: 5px solid rgba(29,58,88,1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 2s linear; /*Esto hace quee la transicion sea lineal*/
+}
+
+.hero-img img:hover{
+    width: 400px;
+    height: 400px;
+}
+
+.hero-text h1{
+    font-family: "Roboto Mono", monospace;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+
+}
+
+.hero-text p{
+    font-size: 90%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-text a{
+    display: inline-block;
+    background-color: #4b545d;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ;
+}
+
+.hero-text a.porfolio-hero{
+    background-color: transparent;
+    border: 1px solid white ;
+    margin-left: 20px;
+}
+
+.hero-text a.porfolio-hero:hover{
+    background-color: #575b60;
+    border: 1px solid transparent;
+}
+
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: 1px solid white ;
+    transform: translateX(8px);
+}
+
+/* -------------------- Estilos de Icons -------------------- */
+
+.icons{
+    font-size: 40px;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50vh;
+    padding: 0 3%;
+}
+.icons i{
+    display: block;
+    margin: 26px 0;
+    transition: all .5s ease;
+}
+
+.icons i:hover{
+    color:#4b545d;
+    transform: scale(1.1);
+}
+/* -------------------- Estilos de ScrollDown -------------------- */
+
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+.scroll-down i{
+    display:  block;
+    font-size: 25px;
+    padding: 12px;
+    border-radius: 50%;
+    background-color: #274d74;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
