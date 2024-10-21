@@ -260,7 +260,7 @@ section{
     .navlist-header{
         position: absolute;
         top: 100%;
-        right: 0%;
+        right: -100%;
         width: 200px;
         height: 180px;
         background-color: rgba(0, 0, 0, 65%);
@@ -282,7 +282,7 @@ section{
 
     
     #menu-toggle:checked + label.menu-icon-action + ul.navlist-header{
-        right: -100%;
+        right: 0%;
         color: red;
     }
 
