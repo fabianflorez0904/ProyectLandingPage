@@ -1,7 +1,7 @@
 /* font-family: "Ubuntu Mono", monospace; */
 /* font-family: "Roboto Mono", monospace; */
 
-/* Normalizacion de la pagina */
+/* Normalizing the page */
 
 * {
     padding: 0;
@@ -13,12 +13,7 @@
     color: white;
 }
 
-body{
-    background-color: black; /*TO DO: Borrar cuando tengamos el fondo final*/
-}
-
-
-/* -------------------- Estilos del header -------------------- */
+/* -------------------- Styling for header -------------------- */
 header{
     position: fixed;
     display: flex;
@@ -29,7 +24,7 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 15px 3%;
-    background-color: rgba(0, 0, 0, 10%);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .logo-header{
@@ -54,30 +49,31 @@ header{
 }
 
 
-#menu-icon-header,
-#menu-header-toggle,
-#menu-header-label-toggle{
-    display: none; /*Solo se va a ver cuando la pagina este colapsada*/
-}
-
-#menu-icon-header{
-    color: white;
+#menu-icon{
     font-size: 35px;
-    /* Estara sobre el header */
     z-index: 101; 
-    /* Para que aparezca la manito con el mouse */
     cursor: pointer;
+}
 
+#menu-icon{
+    display: none; /*This icon is displayed when the page is collapsed*/
+}
+
+#menu-toggle{
+    display: none; /* nunca quiero que se vea el checkbox*/
+}
+
+.menu-icon-action{
+    display: none; /* para que no se le pueda hacer click*/
 }
 
 
-/* -------------------- Estilos del hero -------------------- */
-.hero{
 
+/* -------------------- Styling for Hero Section -------------------- */
+.hero{
     height: 100%;
     width: 100%;
     min-height: 100vh;
-    
     background: linear-gradient(245.59deg, #274d74 0%, #1d3a58 25%, #131313 75%);
     position: relative; /* Para que sea relativo al contenedor (nos permite usar top, bottom, left y right) */
     display: grid; /* Para que el hero se pueda dividir en dos columnas */
@@ -106,16 +102,16 @@ section{
     margin: 10% 0 0 10%;
     border-radius: 50%;
     width: 350px;
-    height: 350px;
+    /* height: 350px; */
     object-fit: cover;
     border: 5px solid rgba(29,58,88,1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: all 2s linear; /*Esto hace quee la transicion sea lineal*/
+    transition: all 2s linear; 
 }
 
 .hero-img img:hover{
     width: 400px;
-    height: 400px;
+    /* height: 400px; */
 }
 
 .hero-text h1{
@@ -163,7 +159,7 @@ section{
     transform: translateX(8px);
 }
 
-/* -------------------- Estilos de Icons -------------------- */
+/* -------------------- Styling for Icons Section -------------------- */
 
 .icons{
     font-size: 40px;
@@ -182,7 +178,7 @@ section{
     color:#4b545d;
     transform: scale(1.1);
 }
-/* -------------------- Estilos de ScrollDown -------------------- */
+/* -------------------- Styling for the ScrollDown Botton -------------------- */
 
 .scroll-down{
     position: absolute;
@@ -201,4 +197,93 @@ section{
 .scroll-down i:hover{
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* -------------------- Styling for the responsive design -------------------- */
+
+@media (max-width:992px) {
+
+    section{
+        padding: 0 3%;
+        transition: all 0.5s ease;
+    }
+    
+    .icons{
+        display: none;
+    }
+
+    .hero-text {
+        padding-top: 0px;
+    }
+
+    .hero-text p{
+        font-size: 80;
+    }
+    .hero-img {
+        text-align: center;
+    }
+    .hero-img img {
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .menu-icon-action{
+        display: block; This icon is displayed when the page is collapsed */
+    }
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-text {
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img{
+        margin: 0;
+    }
+
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr ;    
+    }
+
+    .navlist-header{
+        position: absolute;
+        top: 100%;
+        right: 0%;
+        width: 200px;
+        height: 180px;
+        background-color: rgba(0, 0, 0, 65%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all 1s ease-out;
+    }
+
+    .navlist-header a{
+        display: block;
+        margin: 5px 0;
+    }
+
+    .menu-icon-action {
+        font-size: 200px;
+    }
+
+    
+    #menu-toggle:checked + label.menu-icon-action + ul.navlist-header{
+        right: -100%;
+        color: red;
+    }
+
 }
